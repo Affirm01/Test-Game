@@ -1,8 +1,8 @@
 import turtle
 import random
-from numbers import numberdict, drawNumber
+from numbers import drawNumber
 from setup import head, snakebody, food, score_pixel1, score_pixel2, hs_pixel1, hs_pixel2
-from score import score, highscore, score_display, score_pixel, hs_pixel
+from score import score, highscore, score_pixel, hs_pixel
 
 # Border Collision
 def Border():
@@ -12,9 +12,9 @@ def Border():
         head.goto(0, 0)
         head.next_direction = "stop"
         score = 0
-        score_display.clear()
-        score_display.goto(0, 260)
-        score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
+        # score_display.clear()
+        # score_display.goto(0, 260)
+        # score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
 
         # Score Display
         if score >= 100:
@@ -32,8 +32,8 @@ def Border():
             score_pixel1.clearstamps()
             score_pixel2.clearstamps()
 
-        score_display.goto(0, 230)
-        score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
+        # score_display.goto(0, 230)
+        # score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
 
         # High Score Display
         if highscore >= 100:
@@ -59,9 +59,9 @@ def Border():
         head.goto(0, 0)
         head.next_direction = "stop"
         score = 0
-        score_display.clear()
-        score_display.goto(0, 260)
-        score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
+        # score_display.clear()
+        # score_display.goto(0, 260)
+        # score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
         
         # Score Display
         if score >= 100:
@@ -79,8 +79,8 @@ def Border():
             score_pixel1.clearstamps()
             score_pixel2.clearstamps()
 
-        score_display.goto(0, 230)
-        score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
+        # score_display.goto(0, 230)
+        # score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
 
         # High Score Display
         if highscore >= 100:
@@ -121,9 +121,9 @@ def eatFruit():
         score += 1
         if score > highscore:
             highscore = score
-        score_display.clear()
-        score_display.goto(0, 260)
-        score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
+        # score_display.clear()
+        # score_display.goto(0, 260)
+        # score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
         
         # Score Display
         if score >= 100:
@@ -141,8 +141,8 @@ def eatFruit():
             score_pixel1.clearstamps()
             score_pixel2.clearstamps()
 
-        score_display.goto(0, 230)
-        score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
+        # score_display.goto(0, 230)
+        # score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
 
         # High Score Display
         if highscore >= 100:
@@ -169,9 +169,9 @@ def SnakeCollision():
             head.goto(0, 0)
             head.next_direction = "stop"
             score = 0
-            score_display.clear()
-            score_display.goto(0, 260)
-            score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
+            # score_display.clear()
+            # score_display.goto(0, 260)
+            # score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
 
             # Score Display
             if score >= 100:
@@ -189,8 +189,8 @@ def SnakeCollision():
                 score_pixel1.clearstamps()
                 score_pixel2.clearstamps()
 
-            score_display.goto(0, 230)
-            score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
+            # score_display.goto(0, 230)
+            # score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
 
             # High Score Display
             if highscore >= 100:

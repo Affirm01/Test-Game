@@ -1,6 +1,6 @@
 from setup import head, snakebody, wn
 from colliders import eatFruit, Border, SnakeCollision
-from movement import Move, MoveRight, MoveLeft, MoveUp, MoveDown
+from movement import Move
 
 # Main Game Loop
 def gameLoop():
@@ -16,19 +16,3 @@ def gameLoop():
     SnakeCollision()
     wn.update()
     wn.ontimer(gameLoop, 45)
-
-# Keyboard Recording
-wn.listen()
-
-# Keyboard Bindings
-wn.onkeypress(MoveRight, "d")
-wn.onkeypress(MoveRight, "Right")
-
-wn.onkeypress(MoveLeft, "a")
-wn.onkeypress(MoveLeft, "Left")
-
-wn.onkeypress(MoveUp, "w")
-wn.onkeypress(MoveUp, "Up")
-
-wn.onkeypress(MoveDown, "s")
-wn.onkeypress(MoveDown, "Down")
