@@ -22,5 +22,3 @@ wn.onkeypress(MoveDown, "Down")
 # Start the Game
 gameLoop()
 turtle.done()
-
-# Test Comment
