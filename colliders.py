@@ -4,6 +4,41 @@ from numbers import drawNumber
 from setup import head, snakebody, food, score_pixel1, score_pixel2, hs_pixel1, hs_pixel2
 from score import score, highscore, score_pixel, hs_pixel
 
+def displayScore():
+    global score
+    if score >= 100:
+        digits_list = [int(x) for x in str(score)]
+        drawNumber(score_pixel, digits_list[0], -510, 260)
+        drawNumber(score_pixel1, digits_list[1], -440, 260)
+        drawNumber(score_pixel2, digits_list[2], -370, 260)
+    elif score >= 10:
+        digits_list = [int(x) for x in str(score)]
+        drawNumber(score_pixel, digits_list[0], -440, 260)
+        drawNumber(score_pixel1, digits_list[1], -370, 260)
+        score_pixel2.clearstamps()
+    else:
+        drawNumber(score_pixel, score, -370, 260)
+        score_pixel1.clearstamps()
+        score_pixel2.clearstamps()
+
+def displayHighscore():
+    global highscore
+    if highscore >= 100:
+        digits_list = [int(x) for x in str(highscore)]
+        drawNumber(hs_pixel, digits_list[0], -510, 130)
+        drawNumber(hs_pixel1, digits_list[1], -440, 130)
+        drawNumber(hs_pixel2, digits_list[2], -370, 130)
+    elif highscore >= 10:
+        digits_list = [int(x) for x in str(highscore)]
+        drawNumber(hs_pixel, digits_list[0], -440, 130)
+        drawNumber(hs_pixel1, digits_list[1], -370, 130)
+        hs_pixel2.clearstamps()
+    else:
+        drawNumber(hs_pixel, highscore, -370, 130)
+        hs_pixel1.clearstamps()
+        hs_pixel2.clearstamps()
+
+
 # Border Collision
 def Border():
     global score
@@ -12,91 +47,24 @@ def Border():
         head.goto(0, 0)
         head.next_direction = "stop"
         score = 0
-        # score_display.clear()
-        # score_display.goto(0, 260)
-        # score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
 
-        # Score Display
-        if score >= 100:
-            digits_list = [int(x) for x in str(score)]
-            drawNumber(score_pixel, digits_list[0], -510, 260)
-            drawNumber(score_pixel1, digits_list[1], -440, 260)
-            drawNumber(score_pixel2, digits_list[2], -370, 260)
-        elif score >= 10:
-            digits_list = [int(x) for x in str(score)]
-            drawNumber(score_pixel, digits_list[0], -440, 260)
-            drawNumber(score_pixel1, digits_list[1], -370, 260)
-            score_pixel2.clearstamps()
-        else:
-            drawNumber(score_pixel, score, -370, 260)
-            score_pixel1.clearstamps()
-            score_pixel2.clearstamps()
-
-        # score_display.goto(0, 230)
-        # score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
-
-        # High Score Display
-        if highscore >= 100:
-            digits_list = [int(x) for x in str(highscore)]
-            drawNumber(hs_pixel, digits_list[0], -510, 130)
-            drawNumber(hs_pixel1, digits_list[1], -440, 130)
-            drawNumber(hs_pixel2, digits_list[2], -370, 130)
-        elif highscore >= 10:
-            digits_list = [int(x) for x in str(highscore)]
-            drawNumber(hs_pixel, digits_list[0], -440, 130)
-            drawNumber(hs_pixel1, digits_list[1], -370, 130)
-            hs_pixel2.clearstamps()
-        else:
-            drawNumber(hs_pixel, highscore, -370, 130)
-            hs_pixel1.clearstamps()
-            hs_pixel2.clearstamps()
+        # Score & Highscore Display
+        displayScore()
+        displayHighscore()
 
         if len(snakebody) > 0:
             for i in range(len(snakebody) - 1, -1, -1):
                 snakebody[i].hideturtle()
             snakebody.clear()
+
     if head.ycor() > 290 or head.ycor() < -290:
         head.goto(0, 0)
         head.next_direction = "stop"
         score = 0
-        # score_display.clear()
-        # score_display.goto(0, 260)
-        # score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
         
-        # Score Display
-        if score >= 100:
-            digits_list = [int(x) for x in str(score)]
-            drawNumber(score_pixel, digits_list[0], -510, 260)
-            drawNumber(score_pixel1, digits_list[1], -440, 260)
-            drawNumber(score_pixel2, digits_list[2], -370, 260)
-        elif score >= 10:
-            digits_list = [int(x) for x in str(score)]
-            drawNumber(score_pixel, digits_list[0], -440, 260)
-            drawNumber(score_pixel1, digits_list[1], -370, 260)
-            score_pixel2.clearstamps()
-        else:
-            drawNumber(score_pixel, score, -370, 260)
-            score_pixel1.clearstamps()
-            score_pixel2.clearstamps()
-
-        # score_display.goto(0, 230)
-        # score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
-
-        # High Score Display
-        if highscore >= 100:
-            digits_list = [int(x) for x in str(highscore)]
-            drawNumber(hs_pixel, digits_list[0], -510, 130)
-            drawNumber(hs_pixel1, digits_list[1], -440, 130)
-            drawNumber(hs_pixel2, digits_list[2], -370, 130)
-        elif highscore >= 10:
-            digits_list = [int(x) for x in str(highscore)]
-            drawNumber(hs_pixel, digits_list[0], -440, 130)
-            drawNumber(hs_pixel1, digits_list[1], -370, 130)
-            hs_pixel2.clearstamps()
-        else:
-            drawNumber(hs_pixel, highscore, -370, 130)
-            hs_pixel1.clearstamps()
-            hs_pixel2.clearstamps()
+        # Score & Highscore Display
+        displayScore()
+        displayHighscore()
 
         if len(snakebody) > 0:
             for i in range(len(snakebody) - 1, -1, -1):
@@ -121,44 +89,10 @@ def eatFruit():
         score += 1
         if score > highscore:
             highscore = score
-        # score_display.clear()
-        # score_display.goto(0, 260)
-        # score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
         
-        # Score Display
-        if score >= 100:
-            digits_list = [int(x) for x in str(score)]
-            drawNumber(score_pixel, digits_list[0], -510, 260)
-            drawNumber(score_pixel1, digits_list[1], -440, 260)
-            drawNumber(score_pixel2, digits_list[2], -370, 260)
-        elif score >= 10:
-            digits_list = [int(x) for x in str(score)]
-            drawNumber(score_pixel, digits_list[0], -440, 260)
-            drawNumber(score_pixel1, digits_list[1], -370, 260)
-            score_pixel2.clearstamps()
-        else:
-            drawNumber(score_pixel, score, -370, 260)
-            score_pixel1.clearstamps()
-            score_pixel2.clearstamps()
-
-        # score_display.goto(0, 230)
-        # score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
-
-        # High Score Display
-        if highscore >= 100:
-            digits_list = [int(x) for x in str(highscore)]
-            drawNumber(hs_pixel, digits_list[0], -510, 130)
-            drawNumber(hs_pixel1, digits_list[1], -440, 130)
-            drawNumber(hs_pixel2, digits_list[2], -370, 130)
-        elif highscore >= 10:
-            digits_list = [int(x) for x in str(highscore)]
-            drawNumber(hs_pixel, digits_list[0], -440, 130)
-            drawNumber(hs_pixel1, digits_list[1], -370, 130)
-            hs_pixel2.clearstamps()
-        else:
-            drawNumber(hs_pixel, highscore, -370, 130)
-            hs_pixel1.clearstamps()
-            hs_pixel2.clearstamps()
+        # Score & Highscore Display
+        displayScore()
+        displayHighscore()
 
 # Tail Collision
 def SnakeCollision():
@@ -169,44 +103,10 @@ def SnakeCollision():
             head.goto(0, 0)
             head.next_direction = "stop"
             score = 0
-            # score_display.clear()
-            # score_display.goto(0, 260)
-            # score_display.write("Score: {}".format(score), align="center", font=("Arial", 24, "normal"))
 
-            # Score Display
-            if score >= 100:
-                digits_list = [int(x) for x in str(score)]
-                drawNumber(score_pixel, digits_list[0], -510, 260)
-                drawNumber(score_pixel1, digits_list[1], -440, 260)
-                drawNumber(score_pixel2, digits_list[2], -370, 260)
-            elif score >= 10:
-                digits_list = [int(x) for x in str(score)]
-                drawNumber(score_pixel, digits_list[0], -440, 260)
-                drawNumber(score_pixel1, digits_list[1], -370, 260)
-                score_pixel2.clearstamps()
-            else:
-                drawNumber(score_pixel, score, -370, 260)
-                score_pixel1.clearstamps()
-                score_pixel2.clearstamps()
-
-            # score_display.goto(0, 230)
-            # score_display.write("High Score: {}".format(highscore), align="center", font=("Arial", 24, "normal"))
-
-            # High Score Display
-            if highscore >= 100:
-                digits_list = [int(x) for x in str(highscore)]
-                drawNumber(hs_pixel, digits_list[0], -510, 130)
-                drawNumber(hs_pixel1, digits_list[1], -440, 130)
-                drawNumber(hs_pixel2, digits_list[2], -370, 130)
-            elif highscore >= 10:
-                digits_list = [int(x) for x in str(highscore)]
-                drawNumber(hs_pixel, digits_list[0], -440, 130)
-                drawNumber(hs_pixel1, digits_list[1], -370, 130)
-                hs_pixel2.clearstamps()
-            else:
-                drawNumber(hs_pixel, highscore, -370, 130)
-                hs_pixel1.clearstamps()
-                hs_pixel2.clearstamps()
+            # Score & Highscore Display
+            displayScore()
+            displayHighscore()
 
             if len(snakebody) > 0:
                 for i in range(len(snakebody) - 1, -1, -1):
