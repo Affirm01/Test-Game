@@ -38,6 +38,74 @@ for i in range(4):
     border.left(90)
 border.hideturtle()
 
+# Letter Display Setup
+letter_pixels = []
+for i in range(20):
+    pixel = turtle.Turtle()
+    pixel.speed(0)
+    pixel.shape("square")
+    pixel.shapesize(0.6, 0.6, None)
+    pixel.color("#FDFDFD")
+    pixel.penup()
+    pixel.hideturtle()
+    letter_pixels.append(pixel)
+
+# Game Over, Restart, and Quit Display Setup
+gameover_pixels = []
+for i in range (9):
+    pixel = turtle.Turtle()
+    pixel.speed(0)
+    pixel.shape("square")
+    pixel.shapesize(0.6, 0.6, None)
+    pixel.color("#FDFDFD")
+    pixel.penup()
+    pixel.hideturtle()
+    gameover_pixels.append(pixel)
+
+restart_pixels = []
+for i in range(18):
+    pixel = turtle.Turtle()
+    pixel.speed(0)
+    pixel.shape("square")
+    pixel.shapesize(0.3, 0.3, None)
+    pixel.color("#FDFDFD")
+    pixel.penup()
+    pixel.hideturtle()
+    restart_pixels.append(pixel)
+
+quit_pixels = []
+for i in range(15):
+    pixel = turtle.Turtle()
+    pixel.speed(0)
+    pixel.shape("square")
+    pixel.shapesize(0.3, 0.3, None)
+    pixel.color("#FDFDFD")
+    pixel.penup()
+    pixel.hideturtle()
+    quit_pixels.append(pixel)
+
+score_pixels = []
+for i in range(6):
+    pixel = turtle.Turtle()
+    pixel.speed(0)
+    pixel.shape("square")
+    pixel.shapesize(0.3, 0.3, None)
+    pixel.color("#FDFDFD")
+    pixel.penup()
+    pixel.hideturtle()
+    score_pixels.append(pixel)
+
+highscore_pixels = []
+for i in range(9):
+    pixel = turtle.Turtle()
+    pixel.speed(0)
+    pixel.shape("square")
+    pixel.shapesize(0.3, 0.3, None)
+    pixel.color("#FDFDFD")
+    pixel.penup()
+    pixel.hideturtle()
+    highscore_pixels.append(pixel)
+
 # Score Display Setup
 score_pixel = turtle.Turtle()
 score_pixel.speed(0)

@@ -210,3 +210,13 @@ letterdict = {
     "Y": Y,
     "Z": Z
 }
+
+def drawLetter(pixel, letter, x, y, size=20):
+    pixel.clearstamps()
+    pixel.goto(x, y)
+    for row in letterdict[letter]:
+        for col in row:
+            if col == 1:
+                pixel.stamp()
+            pixel.forward(size)
+        pixel.goto(x, pixel.ycor() - size)

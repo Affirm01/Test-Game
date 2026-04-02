@@ -1,9 +1,15 @@
 from setup import head, snakebody, wn
-from colliders import eatFruit, Border, SnakeCollision
+from colliders import eatFruit, Border, SnakeCollision, displayHighscore, displayScore
 from movement import Move
+
+gameOver = False
 
 # Main Game Loop
 def gameLoop():
+    if gameOver:
+        return
+    displayScore()
+    displayHighscore()
     eatFruit()
     for i in range(len(snakebody) - 1, 0, -1):
         if len(snakebody) > 0:

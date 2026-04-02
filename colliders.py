@@ -1,8 +1,10 @@
 import turtle
 import random
 from numbers import drawNumber
-from setup import head, snakebody, food, score_pixel1, score_pixel2, hs_pixel1, hs_pixel2
-from score import score, highscore, score_pixel, hs_pixel
+from setup import head, snakebody, food, score_pixel, score_pixel1, score_pixel2, hs_pixel, hs_pixel1, hs_pixel2, letter_pixels, restart_pixels, quit_pixels, gameover_pixels
+from score import score, highscore
+from words import drawWord
+import main
 
 def displayScore():
     global score
@@ -52,6 +54,12 @@ def Border():
         displayScore()
         displayHighscore()
 
+        main.gameOver = True
+        drawWord("GAME OVER", gameover_pixels, -272, 44, 12)
+        drawWord("PRESS R TO RESTART", restart_pixels, -272, -44, 6)
+        drawWord("PRESS Q TO QUIT", quit_pixels, -272, -132, 6)
+        
+
         if len(snakebody) > 0:
             for i in range(len(snakebody) - 1, -1, -1):
                 snakebody[i].hideturtle()
@@ -61,10 +69,14 @@ def Border():
         head.goto(0, 0)
         head.next_direction = "stop"
         score = 0
-        
-        # Score & Highscore Display
+
         displayScore()
         displayHighscore()
+
+        main.gameOver = True
+        drawWord("GAME OVER", gameover_pixels, -272, 44, 12)
+        drawWord("PRESS R TO RESTART", restart_pixels, -272, -44, 6)
+        drawWord("PRESS Q TO QUIT", quit_pixels, -272, -132, 6)
 
         if len(snakebody) > 0:
             for i in range(len(snakebody) - 1, -1, -1):
@@ -107,6 +119,11 @@ def SnakeCollision():
             # Score & Highscore Display
             displayScore()
             displayHighscore()
+            
+            main.gameOver = True
+            drawWord("GAME OVER", gameover_pixels, -272, 44, 12)
+            drawWord("PRESS R TO RESTART", restart_pixels, -272, -44, 6)
+            drawWord("PRESS Q TO QUIT", quit_pixels, -272, -132, 6)
 
             if len(snakebody) > 0:
                 for i in range(len(snakebody) - 1, -1, -1):
