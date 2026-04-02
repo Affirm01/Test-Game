@@ -1,6 +1,7 @@
-from setup import head, snakebody, wn
+from setup import head, snakebody, wn, score_pixels, highscore_pixels
 from colliders import eatFruit, Border, SnakeCollision, displayHighscore, displayScore
 from movement import Move
+from words import drawWord
 
 gameOver = False
 
@@ -8,8 +9,12 @@ gameOver = False
 def gameLoop():
     if gameOver:
         return
+    
     displayScore()
+    drawWord("SCORE", score_pixels, -510, 220, 5)
     displayHighscore()
+    drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
+
     eatFruit()
     for i in range(len(snakebody) - 1, 0, -1):
         if len(snakebody) > 0:

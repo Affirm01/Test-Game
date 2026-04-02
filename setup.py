@@ -84,12 +84,13 @@ for i in range(15):
     pixel.hideturtle()
     quit_pixels.append(pixel)
 
+# Score and Highscore Words Display Setup
 score_pixels = []
 for i in range(6):
     pixel = turtle.Turtle()
     pixel.speed(0)
     pixel.shape("square")
-    pixel.shapesize(0.3, 0.3, None)
+    pixel.shapesize(0.25, 0.25, None)
     pixel.color("#FDFDFD")
     pixel.penup()
     pixel.hideturtle()
@@ -100,7 +101,7 @@ for i in range(9):
     pixel = turtle.Turtle()
     pixel.speed(0)
     pixel.shape("square")
-    pixel.shapesize(0.3, 0.3, None)
+    pixel.shapesize(0.25, 0.25, None)
     pixel.color("#FDFDFD")
     pixel.penup()
     pixel.hideturtle()

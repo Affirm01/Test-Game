@@ -1,8 +1,9 @@
 import turtle
 from main import gameLoop
-from setup import wn, head, snakebody, restart_pixels, quit_pixels, gameover_pixels
+from setup import wn, head, snakebody, restart_pixels, quit_pixels, gameover_pixels, score_pixels, highscore_pixels
 from colliders import displayScore, displayHighscore
 from movement import MoveRight, MoveLeft, MoveUp, MoveDown
+from words import drawWord
 import score as sc
 import main
 
@@ -29,7 +30,9 @@ def restart():
 
     # Score & Highscore Display
     displayScore()
+    drawWord("SCORE", score_pixels, -510, 220, 5)
     displayHighscore()
+    drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
 
     head.goto(0, 0)
     head.next_direction = "stop"

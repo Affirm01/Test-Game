@@ -1,7 +1,7 @@
 import turtle
 import random
 from numbers import drawNumber
-from setup import head, snakebody, food, score_pixel, score_pixel1, score_pixel2, hs_pixel, hs_pixel1, hs_pixel2, letter_pixels, restart_pixels, quit_pixels, gameover_pixels
+from setup import head, snakebody, food, score_pixel, score_pixel1, score_pixel2, hs_pixel, hs_pixel1, hs_pixel2, letter_pixels, restart_pixels, quit_pixels, gameover_pixels, score_pixels, highscore_pixels
 from score import score, highscore
 from words import drawWord
 import main
@@ -52,7 +52,9 @@ def Border():
 
         # Score & Highscore Display
         displayScore()
+        drawWord("SCORE", score_pixels, -510, 220, 5)
         displayHighscore()
+        drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
 
         main.gameOver = True
         drawWord("GAME OVER", gameover_pixels, -206, 44, 12)
@@ -71,7 +73,9 @@ def Border():
         score = 0
 
         displayScore()
+        drawWord("SCORE", score_pixels, -510, 220, 5)
         displayHighscore()
+        drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
 
         main.gameOver = True
         drawWord("GAME OVER", gameover_pixels, -206, 44, 12)
@@ -104,7 +108,9 @@ def eatFruit():
         
         # Score & Highscore Display
         displayScore()
+        drawWord("SCORE", score_pixels, -510, 220, 5)
         displayHighscore()
+        drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
 
 # Tail Collision
 def SnakeCollision():
@@ -118,8 +124,10 @@ def SnakeCollision():
 
             # Score & Highscore Display
             displayScore()
+            drawWord("SCORE", score_pixels, -510, 220, 5)
             displayHighscore()
-            
+            drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
+
             main.gameOver = True
             drawWord("GAME OVER", gameover_pixels, -206, 44, 12)
             drawWord("PRESS R TO RESTART", restart_pixels, -205, -33, 5)
