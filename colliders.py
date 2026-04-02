@@ -55,9 +55,9 @@ def Border():
         displayHighscore()
 
         main.gameOver = True
-        drawWord("GAME OVER", gameover_pixels, -272, 44, 12)
-        drawWord("PRESS R TO RESTART", restart_pixels, -272, -44, 6)
-        drawWord("PRESS Q TO QUIT", quit_pixels, -272, -132, 6)
+        drawWord("GAME OVER", gameover_pixels, -206, 44, 12)
+        drawWord("PRESS R TO RESTART", restart_pixels, -147, -33, 5)
+        drawWord("PRESS Q TO QUIT", quit_pixels, -147, -71, 5)
         
 
         if len(snakebody) > 0:
@@ -74,9 +74,9 @@ def Border():
         displayHighscore()
 
         main.gameOver = True
-        drawWord("GAME OVER", gameover_pixels, -272, 44, 12)
-        drawWord("PRESS R TO RESTART", restart_pixels, -272, -44, 6)
-        drawWord("PRESS Q TO QUIT", quit_pixels, -272, -132, 6)
+        drawWord("GAME OVER", gameover_pixels, -206, 44, 12)
+        drawWord("PRESS R TO RESTART", restart_pixels, -205, -33, 5)
+        drawWord("PRESS Q TO QUIT", quit_pixels, -205, -71, 5)
 
         if len(snakebody) > 0:
             for i in range(len(snakebody) - 1, -1, -1):
@@ -121,9 +121,9 @@ def SnakeCollision():
             displayHighscore()
             
             main.gameOver = True
-            drawWord("GAME OVER", gameover_pixels, -272, 44, 12)
-            drawWord("PRESS R TO RESTART", restart_pixels, -272, -44, 6)
-            drawWord("PRESS Q TO QUIT", quit_pixels, -272, -132, 6)
+            drawWord("GAME OVER", gameover_pixels, -206, 44, 12)
+            drawWord("PRESS R TO RESTART", restart_pixels, -205, -33, 5)
+            drawWord("PRESS Q TO QUIT", quit_pixels, -205, -71, 5)
 
             if len(snakebody) > 0:
                 for i in range(len(snakebody) - 1, -1, -1):
