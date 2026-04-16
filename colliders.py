@@ -102,7 +102,7 @@ def eatFruit():
         body.speed(0)
         body.goto(head.xcor(), head.ycor())
         snakebody.append(body)
-        score += 50
+        score += 1
         if score > highscore:
             highscore = score
         
