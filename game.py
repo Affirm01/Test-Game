@@ -30,9 +30,9 @@ def restart():
 
     # Score & Highscore Display
     displayScore()
-    drawWord("SCORE", score_pixels, -510, 220, 5)
+    drawWord("SCORE", score_pixels, -450, 220, 5)
     displayHighscore()
-    drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
+    drawWord("HIGHSCORE", highscore_pixels, -510, 120, 5)
 
     head.goto(0, 0)
     head.next_direction = "stop"

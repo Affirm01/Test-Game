@@ -11,9 +11,9 @@ def gameLoop():
         return
     
     displayScore()
-    drawWord("SCORE", score_pixels, -510, 220, 5)
+    drawWord("SCORE", score_pixels, -450, 220, 5)
     displayHighscore()
-    drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
+    drawWord("HIGHSCORE", highscore_pixels, -480, 120, 5)
 
     eatFruit()
     for i in range(len(snakebody) - 1, 0, -1):

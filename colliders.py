@@ -10,16 +10,16 @@ def displayScore():
     global score
     if score >= 100:
         digits_list = [int(x) for x in str(score)]
-        drawNumber(score_pixel, digits_list[0], -510, 260)
-        drawNumber(score_pixel1, digits_list[1], -440, 260)
-        drawNumber(score_pixel2, digits_list[2], -370, 260)
+        drawNumber(score_pixel, digits_list[0], -442, 180)
+        drawNumber(score_pixel1, digits_list[1], -412, 180)
+        drawNumber(score_pixel2, digits_list[2], -382, 180)
     elif score >= 10:
         digits_list = [int(x) for x in str(score)]
-        drawNumber(score_pixel, digits_list[0], -440, 260)
-        drawNumber(score_pixel1, digits_list[1], -370, 260)
+        drawNumber(score_pixel, digits_list[0], -427, 180)
+        drawNumber(score_pixel1, digits_list[1], -397, 180)
         score_pixel2.clearstamps()
     else:
-        drawNumber(score_pixel, score, -370, 260)
+        drawNumber(score_pixel, score, -412, 180)
         score_pixel1.clearstamps()
         score_pixel2.clearstamps()
 
@@ -27,16 +27,16 @@ def displayHighscore():
     global highscore
     if highscore >= 100:
         digits_list = [int(x) for x in str(highscore)]
-        drawNumber(hs_pixel, digits_list[0], -510, 130)
-        drawNumber(hs_pixel1, digits_list[1], -440, 130)
-        drawNumber(hs_pixel2, digits_list[2], -370, 130)
+        drawNumber(hs_pixel, digits_list[0], -442, 80)
+        drawNumber(hs_pixel1, digits_list[1], -412, 80)
+        drawNumber(hs_pixel2, digits_list[2], -382, 80)
     elif highscore >= 10:
         digits_list = [int(x) for x in str(highscore)]
-        drawNumber(hs_pixel, digits_list[0], -440, 130)
-        drawNumber(hs_pixel1, digits_list[1], -370, 130)
+        drawNumber(hs_pixel, digits_list[0], -427, 80)
+        drawNumber(hs_pixel1, digits_list[1], -397, 80)
         hs_pixel2.clearstamps()
     else:
-        drawNumber(hs_pixel, highscore, -370, 130)
+        drawNumber(hs_pixel, highscore, -412, 80)
         hs_pixel1.clearstamps()
         hs_pixel2.clearstamps()
 
@@ -52,9 +52,9 @@ def Border():
 
         # Score & Highscore Display
         displayScore()
-        drawWord("SCORE", score_pixels, -510, 220, 5)
+        drawWord("SCORE", score_pixels, -450, 220, 5)
         displayHighscore()
-        drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
+        drawWord("HIGHSCORE", highscore_pixels, -480, 120, 5)
 
         main.gameOver = True
         drawWord("GAME OVER", gameover_pixels, -206, 44, 12)
@@ -73,9 +73,9 @@ def Border():
         score = 0
 
         displayScore()
-        drawWord("SCORE", score_pixels, -510, 220, 5)
+        drawWord("SCORE", score_pixels, -450, 220, 5)
         displayHighscore()
-        drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
+        drawWord("HIGHSCORE", highscore_pixels, -480, 120, 5)
 
         main.gameOver = True
         drawWord("GAME OVER", gameover_pixels, -206, 44, 12)
@@ -102,15 +102,15 @@ def eatFruit():
         body.speed(0)
         body.goto(head.xcor(), head.ycor())
         snakebody.append(body)
-        score += 1
+        score += 50
         if score > highscore:
             highscore = score
         
         # Score & Highscore Display
         displayScore()
-        drawWord("SCORE", score_pixels, -510, 220, 5)
+        drawWord("SCORE", score_pixels, -450, 220, 5)
         displayHighscore()
-        drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
+        drawWord("HIGHSCORE", highscore_pixels, -480, 120, 5)
 
 # Tail Collision
 def SnakeCollision():
@@ -124,9 +124,9 @@ def SnakeCollision():
 
             # Score & Highscore Display
             displayScore()
-            drawWord("SCORE", score_pixels, -510, 220, 5)
+            drawWord("SCORE", score_pixels, -450, 220, 5)
             displayHighscore()
-            drawWord("HIGHSCORE", highscore_pixels, -510, 90, 5)
+            drawWord("HIGHSCORE", highscore_pixels, -480, 90, 5)
 
             main.gameOver = True
             drawWord("GAME OVER", gameover_pixels, -206, 44, 12)
